@@ -1,7 +1,7 @@
 {
   "name": "projetorouter",
   "version": "0.1.0",
-  "homepage": "https://github.com/RICK-1994-ITAC/clone-site-Dio",
+  "homepage": "https://RICK-1994-ITAC.github.io/clone-site-Dio",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
