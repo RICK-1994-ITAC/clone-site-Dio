@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/clone-site-Dio.git/static/js/main.f20fee61.js",
-    "static/media/banner.png": "/clone-site-Dio.git/static/media/banner.dd0345e3ad7294fef3fb.png",
-    "index.html": "/clone-site-Dio.git/index.html",
-    "main.f20fee61.js.map": "/clone-site-Dio.git/static/js/main.f20fee61.js.map"
+    "main.js": "/RICK-1994-ITAC/clone-site-Dio/static/js/main.b94703db.js",
+    "static/media/banner.png": "/RICK-1994-ITAC/clone-site-Dio/static/media/banner.dd0345e3ad7294fef3fb.png",
+    "index.html": "/RICK-1994-ITAC/clone-site-Dio/index.html",
+    "main.b94703db.js.map": "/RICK-1994-ITAC/clone-site-Dio/static/js/main.b94703db.js.map"
   },
   "entrypoints": [
-    "static/js/main.f20fee61.js"
+    "static/js/main.b94703db.js"
   ]
 }
