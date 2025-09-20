@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/clone-site-Dio.git/static/js/main.f20fee61.js",
+    "static/media/banner.png": "/clone-site-Dio.git/static/media/banner.dd0345e3ad7294fef3fb.png",
+    "index.html": "/clone-site-Dio.git/index.html",
+    "main.f20fee61.js.map": "/clone-site-Dio.git/static/js/main.f20fee61.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f20fee61.js"
+  ]
+}
