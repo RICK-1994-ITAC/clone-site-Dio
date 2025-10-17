@@ -35,7 +35,7 @@ export const Container = styled.main `
 
 `
 export const ContainerDinamic= styled.div `
-    flex: ${({flex})=>flex};
+    flex: ${({$flex})=>$flex};
     margin: 6rem 2rem;
     
     @media(max-width: 768px){

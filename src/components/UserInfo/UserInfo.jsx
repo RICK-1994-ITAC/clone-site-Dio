@@ -1,7 +1,7 @@
 import React from 'react'
 import {BarProgress,Container,NameText,UserPicture,} from './UserStyle'
 
-export const UserInfo=({nome, image,percentual})=> {
+export const UserInfo=({nome, image,$percentual})=> {
   return (
     <>
         
@@ -11,7 +11,7 @@ export const UserInfo=({nome, image,percentual})=> {
                 <NameText>
                     {nome}
                 </NameText>
-                    <BarProgress percentual={percentual}/>
+                <BarProgress $percentual={$percentual}/>
             </div>
             
         </Container>

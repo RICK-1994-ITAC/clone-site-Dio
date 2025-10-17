@@ -29,7 +29,7 @@ export const BarProgress= styled.div`
         content: '';
         position: absolute;
         height: 6px;
-        width: ${({percentual})=>percentual}%;
+        width: ${({$percentual})=>$percentual}%;
         border-radius: 3px;
         top: 0;
         left: 0;

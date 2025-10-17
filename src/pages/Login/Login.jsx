@@ -5,9 +5,47 @@ import { Button } from '../../components/Buttons/button'
 import { Input } from '../../components/Input/input'
 import { MdEmail, MdLock } from "react-icons/md";
 import { useNavigate } from 'react-router-dom'
+import {useForm} from 'react-hook-form'
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+import { api } from '../../services/api'
+
+const schema = yup
+.object({
+  Email: yup.string().email('email nao é válido').required(),
+  password: yup.string().min(3,"Digite nomínimo 3 caracteres").required(),
+})
+.required()
 
 export const Login = ()=> {
-  const Navigate = useNavigate()
+  const navigate = useNavigate();
+  const { register, handleSubmit, formState:{errors}} = useForm({
+    defaultValues:{
+      Email: '',
+      password: ''
+      
+    },
+    resolver: yupResolver(schema),
+    mode: 'onChange'
+  })
+  
+  
+  
+
+  const onSubmit = async (dataForm) =>{
+  
+    try {
+      const {data} = await api.get(`users?Email=${dataForm.Email}&senha=${dataForm.password}`)
+      console.log(data);
+      
+      data.length !== 0 ? navigate("/Feed") : alert('Dados inválidos');
+    } catch (error) {
+      console.log(error);
+      
+    }
+   
+  }
+
   return (
 
     <>
@@ -25,11 +63,15 @@ export const Login = ()=> {
             <TitleLogin>Faça seu cadastro</TitleLogin>
             <SubTitleLogin>Faça seu login e make the change._</SubTitleLogin>
 
-            <Form>
-              <Input placeholder='E-mail' leftIcon={<MdEmail/>}/>
-              <Input placeholder='Senha' type='password' leftIcon={<MdLock/>}/>
-              <Button title= 'Entrar' variant='secondary' onclickProp={()=> Navigate("/Feed")}/>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+              
+                <Input {...register('Email')} placeholder='E-mail' leftIcon={<MdEmail/>}/>
+                <p style={{fontSize: 14, marginBottom: 10, color: "red"}}>{errors.Email? errors.Email.message:null}</p>
+              
+                <Input {...register('password')} placeholder='Senha' type='password' leftIcon={<MdLock/>}/>
+                <p style={{fontSize: 14, marginBottom: 10, color: "red"}}>{errors.password? errors.password.message:null}</p>
 
+                <Button title= 'Entrar' variant='secondary' type= "submit"/>
             </Form>
               
             
