@@ -19,7 +19,7 @@ export const Home =()=> {
           <Text>
             Domine as tecnologias ultilizadas pelas empresas mais inovadoras do mundo e encare seu novo desafio profissional, evoluindo em comunidade com os melhores experts.
           </Text>
-          <Button title= "Começar agora" variant= "secondary" onclickProp={()=>Navigate("/Login")}/>
+          <Button title= "Começar agora" variant= "secondary" $onclickProp={()=>Navigate("/Login")}/>
         </MainLeft>
 
         <MainRight>

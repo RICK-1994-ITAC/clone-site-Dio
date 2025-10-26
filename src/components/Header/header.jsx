@@ -4,8 +4,10 @@ import { Input } from '../Input/input';
 import { Button } from '../Buttons/button'
 import Logo from '../../assets/logo-dio.png'
 import { FaSearch } from "react-icons/fa";
+import { useNavigate } from 'react-router';
 
 const Header= ({autenticado})=> {
+    const navigate = useNavigate()
   return (
     <Wraper>
         <HeaderContainer>
@@ -15,7 +17,7 @@ const Header= ({autenticado})=> {
                 {autenticado ?
                 <>
                     <SearchInputContainer>
-                    <Input placeholder='Buscar' leftIcon = {<FaSearch/>}/>
+                        <Input placeholder='Buscar' leftIcon = {<FaSearch/>}/>
                     </SearchInputContainer>
                     
                     <Menu>Live code</Menu>
@@ -29,9 +31,9 @@ const Header= ({autenticado})=> {
                  <UserPicture src='https://avatars.githubusercontent.com/u/148507607?v=4'/>
                  :
                 <>
-                    <MenuRight href='#'>Home</MenuRight>
-                    <Button title= 'Entrar'/>
-                    <Button title= 'Cadastrar'/> 
+                    <MenuRight href='#' $onclickProp={()=>{navigate('/')}}>Home</MenuRight>
+                    <Button title= 'Entrar' $onclickProp={()=>{navigate('/Login')}} />
+                    <Button title= 'Cadastrar' $onclickProp={()=>{navigate('/Register')}} /> 
                 </>
                  }
                 

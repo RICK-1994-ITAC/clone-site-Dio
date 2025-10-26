@@ -32,19 +32,20 @@ export const Login = ()=> {
   
   
 
-  const onSubmit = async (dataForm) =>{
-  
-    try {
-      const {data} = await api.get(`users?Email=${dataForm.Email}&senha=${dataForm.password}`)
-      console.log(data);
-      
-      data.length !== 0 ? navigate("/Feed") : alert('Dados inválidos');
-    } catch (error) {
-      console.log(error);
-      
+  const onSubmit = async (dataForm) => {
+  try {
+    const { data } = await api.get(`users?Email=${dataForm.Email}`);
+    
+    const user = data.find((user) => user.Email === dataForm.Email && user.password === dataForm.password);
+    if (user) {
+      navigate("/Feed");
+    } else {
+      alert('Dados inválidos');
     }
-   
+  } catch (error) {
+    console.log(error);
   }
+}
 
   return (
 

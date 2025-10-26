@@ -1,6 +1,22 @@
 {
-    "users":[
-        {"id":1, "nome":"henrique", "Email": "henrique94@g.com", "senha": "123456"},
-        {"id":2, "nome":"joao", "Email": "joaoitac.com", "senha": "123456"}
-    ]
+  "users": [
+    {
+      "id": "1",
+      "nome": "henrique",
+      "Email": "henrique94@g.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "nome": "joao",
+      "Email": "joaoitac.com",
+      "password": "123456"
+    },
+    {
+      "id": "5cc2",
+      "nome": "joao",
+      "Email": "henrique94@g.com",
+      "password": "654321"
+    }
+  ]
 }

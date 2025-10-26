@@ -127,7 +127,7 @@ export const ForgotPassword = styled.p `
     font-weight: 800;
     color: #e5e044;
 `
-export const CreateAccount = styled.p `
+export const CreateAccount = styled.a `
     line-height: 19px;
     font-size: .8rem;
     font-weight: 800;
