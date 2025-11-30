@@ -7,7 +7,7 @@ export const InputContainer = styled.div `
     justify-content: center;
     
 `
-export const IconContainer = styled.div `
+export const IconContainer = styled.div`
     margin-right: 10px;
 `
 export const InputText = styled.input `

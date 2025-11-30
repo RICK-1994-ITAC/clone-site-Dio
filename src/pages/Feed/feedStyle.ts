@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import type { Tflex } from "./types";
 
 export const ContainerFeed = styled.div`
     width: 100vw;
@@ -34,7 +35,7 @@ export const Container = styled.main `
     }
 
 `
-export const ContainerDinamic= styled.div `
+export const ContainerDinamic= styled.div<Tflex> `
     flex: ${({$flex})=>$flex};
     margin: 6rem 2rem;
     

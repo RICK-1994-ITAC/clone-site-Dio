@@ -5,8 +5,9 @@ import { Button } from '../Buttons/button'
 import Logo from '../../assets/logo-dio.png'
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from 'react-router';
+import type { Theader } from './types';
 
-const Header= ({autenticado})=> {
+const Header= ({autenticado}:Theader)=> {
     const navigate = useNavigate()
   return (
     <Wraper>
@@ -32,7 +33,7 @@ const Header= ({autenticado})=> {
                  :
                 <>
                     <MenuRight href='#' $onclickProp={()=>{navigate('/')}}>Home</MenuRight>
-                    <Button title= 'Entrar' $onclickProp={()=>{navigate('/Login')}} />
+                    <Button title= 'Entrar' $onclickProp={()=>{navigate('/Login')}}/>
                     <Button title= 'Cadastrar' $onclickProp={()=>{navigate('/Register')}} /> 
                 </>
                  }

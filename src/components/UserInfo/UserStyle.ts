@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import type { Tuserinfo } from "./types";
 
 export const Container = styled.div `
     display: flex;
@@ -18,7 +19,7 @@ export const NameText = styled.div `
     line-height: 25px;
     color: #fff;
 `
-export const BarProgress= styled.div`
+export const BarProgress= styled.div<Tuserinfo>`
     width: 180px;
     height: 6px;
     position: relative;

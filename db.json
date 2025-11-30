@@ -17,6 +17,12 @@
       "nome": "joao",
       "Email": "henrique94@g.com",
       "password": "654321"
+    },
+    {
+      "id": "a231",
+      "nome": "joao lopes",
+      "Email": "joaolopes2025@gmail",
+      "password": "2025"
     }
   ]
 }

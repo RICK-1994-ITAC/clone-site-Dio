@@ -9,6 +9,7 @@ import {useForm} from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { api } from '../../services/api'
+import type { Tdataform } from './types'
 
 const schema = yup
 .object({
@@ -32,11 +33,11 @@ export const Login = ()=> {
   
   
 
-  const onSubmit = async (dataForm) => {
+  const onSubmit = async (dataForm:Tdataform) => {
   try {
     const { data } = await api.get(`users?Email=${dataForm.Email}`);
     
-    const user = data.find((user) => user.Email === dataForm.Email && user.password === dataForm.password);
+    const user = data.find((user:Tdataform) => user.Email === dataForm.Email && user.password === dataForm.password);
     if (user) {
       navigate("/Feed");
     } else {

@@ -10,6 +10,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { api } from '../../services/api';
 import { useNavigate } from "react-router";
+import type { Tdataregister } from "./types";
 
 const schema = yup
 .object({
@@ -27,7 +28,7 @@ export const Register = ()=>{
     mode: "onChange"
   })
 
-  const submit = async(dataRegister)=>{
+  const submit = async(dataRegister:Tdataregister)=>{
     try {
       await api.post('/users',dataRegister)
 

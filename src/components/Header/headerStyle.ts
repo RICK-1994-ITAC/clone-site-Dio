@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import type { Tmenu } from './types'
 
 export const Wraper = styled.div `
     width: 100vw;
@@ -79,7 +80,7 @@ export const Menu = styled.a `
     }
 `
 
-export const MenuRight = styled.a `
+export const MenuRight = styled.a<Tmenu> `
     font-family: 'open sans';
     font-style: normal;
     font-size: 16px;

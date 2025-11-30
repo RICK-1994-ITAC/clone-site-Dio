@@ -8,7 +8,7 @@ import { Feed } from './pages/Feed/feed';
 import { Register } from './pages/Register/Register';
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')as HTMLElement);
 root.render(
   <HashRouter>
     <GlobalStyle/>
