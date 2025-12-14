@@ -10,7 +10,7 @@ export const Wraper = styled.div `
     font-family: 'Open Sans', sans-serif;
     position: absolute;
     top: 0;
-    
+
     @media(max-width: 376px){
         text-align: center;
         right: 0;
@@ -45,6 +45,11 @@ export const HeaderContainer = styled.div`
 export const Row = styled.div`
     display: flex;
     align-items: center;
+    gap: 1rem;
+
+    button{
+        
+    }
 `
 
 export const SearchInputContainer = styled.div `
@@ -74,6 +79,10 @@ export const Menu = styled.a `
     margin-right: 24px;
     text-decoration: none;
 
+    @media(max-width: 526px){
+        font-size: .8rem;
+    }
+
     @media(max-width: 426px){
         font-size: 10px;
         margin-right: 10px;
@@ -96,7 +105,4 @@ export const UserPicture = styled.img `
     border-radius: 22px;
     border: 2px solid #ffff;
 
-    @media(max-width: 320px){
-       
-    }
 `

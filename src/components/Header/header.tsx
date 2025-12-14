@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { HeaderContainer, Row, Wraper, SearchInputContainer, Menu , MenuRight, UserPicture} from './headerStyle';
 import { Input } from '../Input/input';
 import { Button } from '../Buttons/button'
 import Logo from '../../assets/logo-dio.png'
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from 'react-router';
-import type { Theader } from './types';
+import { AuthContext } from '../../context/CreateContext';
 
-const Header= ({autenticado}:Theader)=> {
+const Header= ()=> {
     const navigate = useNavigate()
+    const { userS,handleSignOut }= useContext(AuthContext) 
   return (
     <Wraper>
         <HeaderContainer>
             <Row>
                 <img src={Logo} alt="Logo da dio" className='logoDio'/>
 
-                {autenticado ?
+                {userS.id ?
                 <>
                     <SearchInputContainer>
                         <Input placeholder='Buscar' leftIcon = {<FaSearch/>}/>
@@ -28,8 +29,10 @@ const Header= ({autenticado}:Theader)=> {
                 
             </Row>
             <Row>
-                {autenticado ?
-                 <UserPicture src='https://avatars.githubusercontent.com/u/148507607?v=4'/>
+                {userS.id ?<>
+                    <UserPicture src='https://avatars.githubusercontent.com/u/148507607?v=4'/>
+                    <Button title = 'Sair' variant='secondary' $onclickProp={handleSignOut}/>
+                </>
                  :
                 <>
                     <MenuRight href='#' $onclickProp={()=>{navigate('/')}}>Home</MenuRight>

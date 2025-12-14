@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../../components/Header/header'
 import {Container,CreateAccount,ForgotPassword,MainLeft,MainRight,ContainerAccount,SubTitleLogin,Title,TitleLogin,Wrapper,Form} from './LoginStyle'
 import { Button } from '../../components/Buttons/button'
@@ -10,6 +10,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { api } from '../../services/api'
 import type { Tdataform } from './types'
+import { AuthContext } from '../../context/CreateContext'
 
 const schema = yup
 .object({
@@ -19,7 +20,8 @@ const schema = yup
 .required()
 
 export const Login = ()=> {
-  const navigate = useNavigate();
+  const { handleLogin,userS }= useContext(AuthContext) 
+
   const { register, handleSubmit, formState:{errors}} = useForm({
     defaultValues:{
       Email: '',
@@ -34,19 +36,8 @@ export const Login = ()=> {
   
 
   const onSubmit = async (dataForm:Tdataform) => {
-  try {
-    const { data } = await api.get(`users?Email=${dataForm.Email}`);
-    
-    const user = data.find((user:Tdataform) => user.Email === dataForm.Email && user.password === dataForm.password);
-    if (user) {
-      navigate("/Feed");
-    } else {
-      alert('Dados inválidos');
-    }
-  } catch (error) {
-    console.log(error);
+    userS.id ? alert('usuário Logado'): handleLogin(dataForm)
   }
-}
 
   return (
 

@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../../components/Header/header'
 import {Container,ContainerDinamic,Title,TitleUser,ContainerFeed} from './feedStyle'
 import { Card } from '../../components/Cards/card'
 import { UserInfo } from '../../components/UserInfo/UserInfo';
+import { AuthContext } from '../../context/CreateContext';
 
 
 export const Feed = ()=> {
+
   return (
 
     <ContainerFeed>
-      <Header autenticado={true}/>
+      <Header/>
       <Container>
         <ContainerDinamic $flex={3}>
             <Title>Feed</Title>
-
             <Card/>
             <Card/>
             <Card/>
